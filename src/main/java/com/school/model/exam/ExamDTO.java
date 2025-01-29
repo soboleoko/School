@@ -1,7 +1,7 @@
 package com.school.model.exam;
 
 import com.school.model.grade.ExamScore;
-import com.school.model.student.Student;
+import com.school.model.student.StudentDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,6 +16,6 @@ public class ExamDTO {
     private Long id;
     private String name;
     private LocalDate date;
-    private Student student;
+    private StudentDTO student;
     private Set<ExamScore> scores;
 }

@@ -1,7 +1,7 @@
 package com.school.model.student;
 
 import com.school.model.exam.Exam;
-import com.school.model.schoolClass.Class;
+import com.school.model.schoolClass.ClassDTO;
 import com.school.model.subject.Subject;
 import com.school.model.teacher.Teacher;
 import lombok.AllArgsConstructor;
@@ -20,5 +20,5 @@ public class StudentDTO {
     private Set<Teacher> teachers;
     private Set<Subject> subjects;
     private Set<Exam> exams;
-    private Class schoolClass;
+    private ClassDTO schoolClass;
 }
