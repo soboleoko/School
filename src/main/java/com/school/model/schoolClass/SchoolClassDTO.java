@@ -10,7 +10,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class ClassDTO {
+public class SchoolClassDTO {
     private Long id;
     private String name;
     private int studentsQuantity;

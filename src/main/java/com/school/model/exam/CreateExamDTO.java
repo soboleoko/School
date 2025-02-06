@@ -1,6 +1,5 @@
 package com.school.model.exam;
 
-import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,7 +14,5 @@ public class CreateExamDTO {
     @NotNull
     private String name;
     @NotNull
-    @Future
     private LocalDate date;
 }
-

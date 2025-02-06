@@ -1,14 +1,10 @@
 package com.school.model.student;
 
-import com.school.model.exam.Exam;
-import com.school.model.schoolClass.ClassDTO;
-import com.school.model.subject.Subject;
-import com.school.model.teacher.Teacher;
+import com.school.model.schoolClass.SchoolClassDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Set;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,8 +13,5 @@ public class StudentDTO {
     private Long id;
     private String firstName;
     private String lastName;
-    private Set<Teacher> teachers;
-    private Set<Subject> subjects;
-    private Set<Exam> exams;
-    private ClassDTO schoolClass;
+    private SchoolClassDTO schoolClass;
 }

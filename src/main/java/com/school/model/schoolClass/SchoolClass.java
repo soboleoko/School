@@ -14,10 +14,13 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Class {
+public class SchoolClass {
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "students_quantity")
     private int studentsQuantity;
     @OneToOne
     @JoinColumn(name = "teacher_id")

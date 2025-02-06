@@ -2,12 +2,10 @@ package com.school.model.student;
 
 import com.school.model.exam.Exam;
 import com.school.model.grade.ExamScore;
-import com.school.model.schoolClass.Class;
+import com.school.model.schoolClass.SchoolClass;
 import com.school.model.subject.Subject;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -18,8 +16,11 @@ import java.util.Set;
 @Data
 public class Student {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "firstName")
     private String firstName;
+    @Column(name = "lastName")
     private String lastName;
     @ManyToMany(mappedBy = "students")
     private Set<Subject> subjects = new HashSet<>();
@@ -29,5 +30,9 @@ public class Student {
     private Set<ExamScore> scores = new HashSet<>();
     @ManyToOne
     @JoinColumn(name = "class_id")
-    private Class schoolClass;
+    private SchoolClass schoolClass;
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
 }

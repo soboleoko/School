@@ -3,9 +3,8 @@ package com.school.model.grade;
 import com.school.model.exam.Exam;
 import com.school.model.student.Student;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
 
 @Entity
 @AllArgsConstructor
@@ -22,5 +21,10 @@ public class ExamScore {
     @MapsId("examId")
     @JoinColumn(name = "exam_id")
     private Exam exam;
+    @Column(name = "score")
     private int score;
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
 }

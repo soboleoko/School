@@ -1,6 +1,6 @@
 package com.school.model.teacher;
 
-import com.school.model.schoolClass.Class;
+import com.school.model.schoolClass.SchoolClass;
 import com.school.model.subject.Subject;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -17,12 +17,19 @@ import java.util.Set;
 @Data
 public class Teacher {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "firstName")
     private String firstName;
+    @Column(name = "lastName")
     private String lastName;
     @OneToOne
     @JoinColumn(name = "class_id")
-    private Class schoolClass;
+    private SchoolClass schoolClass;
     @ManyToMany(mappedBy = "teachers")
-    private Set<Subject> subject = new HashSet<>();
+    private Set<Subject> subjects = new HashSet<>();
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
 }

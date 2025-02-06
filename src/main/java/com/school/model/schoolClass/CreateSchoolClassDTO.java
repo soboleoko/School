@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class CreateClassDTO {
+public class CreateSchoolClassDTO {
     @NotNull
     private String name;
     @NotNull

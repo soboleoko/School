@@ -17,13 +17,15 @@ import java.util.Set;
 @Data
 public class Subject {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "name")
     private String name;
     @ManyToMany
     @JoinTable(
             name = "student_subject",
-            joinColumns = @JoinColumn(name = "student_id"),
-            inverseJoinColumns = @JoinColumn(name = "subject_id")
+            joinColumns = @JoinColumn(name = "subject_id"),
+            inverseJoinColumns = @JoinColumn(name = "student_id")
     )
     private Set<Student> students = new HashSet<>();
     @ManyToMany
@@ -33,4 +35,8 @@ public class Subject {
             inverseJoinColumns = @JoinColumn(name = "subject_id")
     )
     private Set<Teacher> teachers = new HashSet<>();
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
 }

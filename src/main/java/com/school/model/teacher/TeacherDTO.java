@@ -1,6 +1,6 @@
 package com.school.model.teacher;
 
-import com.school.model.schoolClass.ClassDTO;
+import com.school.model.schoolClass.SchoolClassDTO;
 import com.school.model.student.Student;
 import com.school.model.subject.SubjectDTO;
 import lombok.AllArgsConstructor;
@@ -17,6 +17,6 @@ public class TeacherDTO {
     private String firstName;
     private String lastName;
     private SubjectDTO subject;
-    private ClassDTO schoolClass;
+    private SchoolClassDTO schoolClass;
     private Set<Student> students;
 }

@@ -10,5 +10,10 @@ import lombok.NoArgsConstructor;
 @Data
 public class CreateScoreDTO {
     @NotNull
-    private String score;
+    private Integer score;
+    @NotNull
+    private Long examId;
+    @NotNull
+    private Long studentId;
+
 }
